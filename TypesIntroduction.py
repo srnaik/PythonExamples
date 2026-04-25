@@ -9,6 +9,8 @@ def print_str():
     print('Name with Capital Letter {}'.format(name))
     name = 'sachin'.upper()
     print('Name with Capital Letter {}'.format(name))
+    name = 'sachin {0:>1} {1:<2}'.format('R', 'Naik')
+    print('Name with Capital Letter {}'.format(name))
 
 if __name__ == '__main__':
     print_num(7)
