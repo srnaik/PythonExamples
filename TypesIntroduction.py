@@ -1,7 +1,6 @@
 from http.client import NotConnected
-
-
 from decimal import *
+from traceback import print_list
 
 # Python 3 has two basic numeric types - Integer and Floating point
 def print_num(num):
@@ -31,6 +30,28 @@ def print_num(num):
     x = a + a + a - b
     print('x is {}'.format(x))
     print(type(x))
+
+def print_list_items():
+
+    x = [1,2,3,4,5]
+    x[2] = 42 # List items are mutable
+
+    for i in x:
+        print('i is {}'.format(i))
+
+    y = (2,4,8,10,12)
+    for i in y:
+        print ('i is {0:>1} '.format(i))
+
+    z = range(10,100,5)
+    # z[9] = 20 -> Range Object Doesn't support assignment
+    for i in z:
+        print ('i is {0:>1} '.format(i))
+
+def print_dictionary():
+    dictionary = {'one':1, 'two':2, 'three':3, 'four':4, 'five':5}
+    for k,v in dictionary.items():
+        print('Key is {} and Value is {}'.format(k,v))
 
 def print_str():
     # Strings are objects in Python, even the literal strings
@@ -69,7 +90,30 @@ def print_types():
     print('x is {}'.format(x))
     print(type(x))
 
+def print_type_and_id():
+    tuple_one = (1,'two', 3.0,[4,'four'],5)
+    tuple_two = (1,'two', 3.0,[4,'four'],5)
+    print('tuple_one is {}'.format(tuple_one))
+    print('tuple_two is {}'.format(tuple_two))
+    print('tuple_one type is {}', type(tuple_one))
+    print('tuple_two type is {}', type(tuple_two))
+
+    if tuple_one[2] == tuple_two[2]:
+        print('Equal')
+    else:
+        print('Not Equal')
+
+    if isinstance(tuple_one, tuple):
+        print('Tuple')
+
+    if isinstance(tuple_one[3],list):
+        print('List')
+
+
 if __name__ == '__main__':
     print_num(7)
     print_str()
     print_types()
+    print_list_items()
+    print_dictionary()
+    print_type_and_id()
