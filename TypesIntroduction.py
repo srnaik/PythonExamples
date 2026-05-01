@@ -97,6 +97,8 @@ def print_type_and_id():
     print('tuple_two is {}'.format(tuple_two))
     print('tuple_one type is {}', type(tuple_one))
     print('tuple_two type is {}', type(tuple_two))
+    print(id(tuple_one[2]))
+    print(id(tuple_two[2]))
 
     if tuple_one[2] == tuple_two[2]:
         print('Equal')
