@@ -2,7 +2,6 @@
 
 def main():
     n = 10
-
     numarray = [100]
     print(f"Value of numarray from main is {numarray}, it's id is {id(numarray)}")
     x = kitten(n,numarray)
@@ -11,6 +10,10 @@ def main():
     print(f"Value of variable n is {n}, it's id is {id(n)}")
     # Object reference is snow changed since it's updated in kitten method
     print(f"Value of numarray now from main is {numarray}, it's id is {id(numarray)}")
+
+    a = ('Sachin','Rahul','Sourav','Anil')
+    print_list_items(a)
+    print_list_items()
 
 # Non-default arguments must always follow default arguments
 def kitten(n, numarray,p = 20):
@@ -21,5 +24,12 @@ def kitten(n, numarray,p = 20):
     print(f"Value of variable n is {n}, it's id is {id(n)}")
     print(f'Printing p from kitten {p}')
     return 'kitten'
+
+def print_list_items(*args):
+    if(len(args)):
+        for arg in args:
+            print(arg)
+    else:
+        print('Empty list')
 
 if __name__ == '__main__': main()
