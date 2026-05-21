@@ -1,6 +1,7 @@
 
 class Animal:
-
+    # Class variable, ideally class variables are defined while working with constants/immutable values
+    num = [1,2,3]
     def __init__(self, **kwargs):
         self._type = kwargs['type'] if 'type' in kwargs else 'Kitten'
         self._name = kwargs['name'] if 'name' in kwargs else 'Duck'
@@ -30,10 +31,14 @@ def print_animal(obj):
 
 def main():
     first_animal = Animal(type='Kitten', name='fluffy',sound='rwar')
+
     second_animal = Animal(type='Duck',name='Donald',sound='Quack')
     print_animal(first_animal)
     print_animal(second_animal)
     print_animal(Animal(type='velociraptor',name='veronica',sound='hello'))
     print(first_animal) # overridden __str__ method is invoked here
+    print(first_animal.num)
+    first_animal.num[0] = 10
+    print(second_animal.num)
 
 if __name__ == '__main__': main()
