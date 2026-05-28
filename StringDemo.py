@@ -1,5 +1,3 @@
-
-# strings are first class objects in python
 class MyString(str):
 
     def __str__(self):
@@ -13,7 +11,7 @@ class MyString(str):
         print(self.title())
         print(self.swapcase())
         print(self.casefold())
-        # concatination of literal strings
+        # concatenation of literal strings
         title = 'Sachin ' 'Naik'
         print(title)
         print('Hello, World.{}'.format(42 * 7))
@@ -26,6 +24,24 @@ class MyString(str):
         else:
             print(f'Id\'s of {s1} and {s2} are same')
             print(f'Id of s1 is {id(s1)} and s2 is {s2}')
+
+    # strings are first class objects in python
+    def print_formatted_string(self, string):
+        print('The value passed is {}'.format(string))
+        y = 72
+        print('Values of x and y {} {}'.format(string, y))
+        print('Values of x and y with positional args {0} {1}'.format(string, y))
+        print('Values of x and y with named variables {xx} {bb}'.format(xx=string, bb=y))
+        print('Values of x and y with formatting instructions {0:<5} {1:+05}'.format(string, y))
+        z = string * y * 1000
+        print('The result is {:,}'.format(z))
+        print('Printing in European Format {:,}'.format(z).replace(',','.'))
+        print('The result is {:,.3f}'.format(z))
+
+
+
+
 s = MyString('Hello, World.')
 print(s)
 s.print_string('Hello, World')
+s.print_formatted_string(42)
