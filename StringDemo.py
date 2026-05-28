@@ -38,10 +38,16 @@ class MyString(str):
         print('Printing in European Format {:,}'.format(z).replace(',','.'))
         print('The result is {:,.3f}'.format(z))
 
-
+    def print_split_join_string(self, string):
+        print(string.split())
+        print(string.split('i'))
+        list = string.split()
+        str = ':'.join(list)
+        print(str)
 
 
 s = MyString('Hello, World.')
 print(s)
 s.print_string('Hello, World')
 s.print_formatted_string(42)
+s.print_split_join_string('This is a long string with a bunch of words inn it')
